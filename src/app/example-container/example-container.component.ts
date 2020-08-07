@@ -5,8 +5,6 @@ import {
   ViewContainerRef,
   ComponentFactoryResolver,
 } from "@angular/core";
-import { DynamicContentOneComponent } from "../dynamic-content-one/dynamic-content-one.component";
-import { DynamicContentTwoComponent } from "../dynamic-content-two/dynamic-content-two.component";
 
 @Component({
   selector: "app-example-container",
@@ -21,7 +19,8 @@ export class ExampleContainerComponent implements OnInit {
 
   ngOnInit() {}
 
-  addDynamicCompOne() {
+  async addDynamicCompOne() {
+    const { DynamicContentOneComponent } = await import('../dynamic-content-one/dynamic-content-one.component');
     const componentFactory = this.cfr.resolveComponentFactory(
       DynamicContentOneComponent
     );
@@ -29,7 +28,8 @@ export class ExampleContainerComponent implements OnInit {
     componentRef.instance.data = "INPUT DATA 1";
   }
 
-  addDynamicCompTwo() {
+  async addDynamicCompTwo() {
+    const { DynamicContentTwoComponent } = await import('../dynamic-content-two/dynamic-content-two.component');
     const componentFactory = this.cfr.resolveComponentFactory(
       DynamicContentTwoComponent
     );

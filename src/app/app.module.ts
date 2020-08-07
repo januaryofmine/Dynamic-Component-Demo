@@ -16,6 +16,5 @@ import { DynamicContentTwoComponent } from "./dynamic-content-two/dynamic-conten
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DynamicContentOneComponent, DynamicContentTwoComponent],
 })
 export class AppModule {}
