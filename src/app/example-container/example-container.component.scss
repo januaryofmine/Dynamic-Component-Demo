@@ -1,3 +1,15 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.dynamic-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .btn {
   margin-right: 5px;
 }
